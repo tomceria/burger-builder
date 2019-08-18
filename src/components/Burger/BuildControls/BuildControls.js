@@ -13,13 +13,18 @@ const buildControls = props => {
       {Object.keys(props.labels).map(igKey => (
         <BuildControl
           key={igKey}
-          label={props.labels[igKey]}
+          //Functions
           added={() => props.ingredientAdded(igKey)}
           removed={() => props.ingredientRemoved(igKey)}
+          //Variables
+          label={props.labels[igKey]}
           disabled={props.disabled[igKey]}
         />
       ))}
-      <button className={styles.OrderButton} disabled={!props.purchasable}>
+      <button
+        className={styles.OrderButton}
+        onClick={props.purchaseConfirm}
+        disabled={!props.purchasable}>
         ORDER
       </button>
     </div>
