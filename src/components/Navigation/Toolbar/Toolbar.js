@@ -13,7 +13,7 @@ const toolbar = (props) => {
       <div className={styles.Logo}>
         <Logo />
       </div>
-      <nav style={{height: '100%'}}>
+      <nav className={styles.DesktopOnly} style={{height: '100%'}}>
         <NavigationItems />
       </nav>
     </header>
