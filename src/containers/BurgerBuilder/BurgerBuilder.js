@@ -65,7 +65,7 @@ class BurgerBuilder extends Component {
     }
     updatedIngredients[type] = this.state.ingredients[type] - 1;
     this.setState({ingredients: updatedIngredients});
-    this.setState((prevState, props) => {
+    this.setState((prevState) => {
       return {totalPrice: prevState.totalPrice - INGREDIENT_PRICES[type]};
     });
     this.updatePurchaseState(updatedIngredients);

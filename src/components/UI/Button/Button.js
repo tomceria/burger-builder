@@ -5,7 +5,7 @@ import styles from './Button.module.css';
 const button = props => {
   return (
     <button
-      className={[styles.Button, styles[props.btntype]].join(' ')}
+      className={[styles.Button, styles[props.btnType]].join(' ')}
       onClick={props.clicked}
     >
       {props.children}
