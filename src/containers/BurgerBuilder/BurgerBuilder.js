@@ -102,6 +102,7 @@ class BurgerBuilder extends Component {
             //Variables
             ingredients={this.state.ingredients}
             labels={INGREDIENT_LABELS}
+            totalPrice={this.state.totalPrice}
           />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
