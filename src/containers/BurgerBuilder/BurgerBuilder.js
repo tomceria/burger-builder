@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from '../../axios';
 
 import Aux from '../../hoc/Aux/Aux';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -103,7 +104,7 @@ class BurgerBuilder extends Component {
         this.setState({orderLoading: false, purchaseConfirm: false});
       })
       .catch(error => {
-        this.setState({orderLoading: false});
+        this.setState({orderLoading: false, purchaseConfirm: false});
       });
   }
 
@@ -158,4 +159,4 @@ class BurgerBuilder extends Component {
   }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
